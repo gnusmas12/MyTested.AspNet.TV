@@ -4,7 +4,7 @@
     using System.Globalization;
 
     using OJS.Workers.Common;
-
+    
     /// <summary>
     /// Checks if each line of decimals are equal with certain precision (default is 14).
     /// </summary>

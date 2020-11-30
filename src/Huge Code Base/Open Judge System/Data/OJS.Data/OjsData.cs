@@ -104,7 +104,7 @@
                 {
                     type = typeof(UsersRepository);
                 }
-
+                
                 this.repositories.Add(typeof(T), Activator.CreateInstance(type, this.context));
             }
 
