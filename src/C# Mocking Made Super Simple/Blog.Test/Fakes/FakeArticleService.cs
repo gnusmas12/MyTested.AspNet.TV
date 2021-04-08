@@ -14,7 +14,7 @@
         {
             new Article { Id = 1, IsPublic = true },
             new Article { Id = 2 },
-            new Article { Id = 3 },
+            new Article { Id = 4 },
             new Article { Id = 5 }
         };
 
