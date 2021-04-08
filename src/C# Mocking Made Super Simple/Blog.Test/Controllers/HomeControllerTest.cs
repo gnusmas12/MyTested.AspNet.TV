@@ -56,11 +56,11 @@
         public void PrivacyShouldReturnViewResultWithCorrectUsername()
         {
             // Arrange
-            var homeController = new HomeController(null)
-                .WithTestUser();
-
+            var fakeHomeController = A.Fake<HomeController>();
+           // A.CallTo(() => fakeHomeController.Privacy());
+            A.CallTo(() => fakeHomeController.User.Identity.Name).Returns(TestConstants.TestUsername);
             // Act
-            var result = homeController.Privacy();
+            var result = fakeHomeController.Privacy();
 
             // Assert
             var viewResult = Assert.IsType<ViewResult>(result);

@@ -5,6 +5,7 @@
     using System.Threading.Tasks;
     using Blog.Controllers;
     using Blog.Services.Images;
+    using Blog.Services.Machine;
     using Extensions;
     using FakeItEasy;
     using Fakes;
@@ -71,7 +72,11 @@
         public async Task GetProfilePictureShouldReturnCorrectFileStreamResult()
         {
             // Arrange
-            var usersController = new UsersController(null, new FakeFileSystemService())
+            var fakeFilesystemService = A.Fake<IFileSystemService>();
+
+            A.CallTo(() => fakeFilesystemService).CallsBaseMethod();
+
+            var usersController = new UsersController(null, fakeFilesystemService)
                 .WithTestUser();
 
             // Act

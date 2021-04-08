@@ -23,7 +23,10 @@
             // Arrange
             const int pageSize = 2;
             var articleService = new FakeArticleService();
-            var articlesController = this.GetArticlesController(articleService, pageSize);
+            var fakeArticleSerbice = A.Fake<FakeArticleService>();
+
+            var articlesController = this.GetArticlesController(fakeArticleSerbice, pageSize);
+
 
             // Act
             var result = await articlesController.All();
